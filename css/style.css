@@ -1,0 +1,389 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.limitar-secao {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Estilização Topo */
+.topo {
+  width: 100%;
+  position: fixed;
+  background-color: #fff;
+  z-index: 1000; /* Adiciona uma camada superior para o topo */
+}
+
+.container-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap; /* Mantém os itens em uma linha */
+  gap: 30px;
+  padding: 20px;
+  color: #3d3d3d;
+  width: 100%;
+}
+
+.container-link-logotipo {
+  flex: 1 0 auto;
+}
+
+.container-link-logotipo a {
+  font-size: 24px;
+  text-decoration: none;
+  color: #3d3d3d;
+}
+
+.container-link-logotipo span {
+  color: #6592c9;
+}
+
+.container-links {
+  display: flex;
+  flex: 1 0 auto;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.link-topo {
+  text-decoration: none;
+  color: #3d3d3d;
+}
+
+/* Estilo básico para o menu sanduíche */
+.menu-sanduiche {
+  display: none; /* Escondido por padrão */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.menu-sanduiche span {
+  width: 100%;
+  height: 3px;
+  background-color: #3d3d3d;
+}
+
+/* Estilos adicionais para o menu sanduíche */
+.menu-sanduiche.active span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.menu-sanduiche.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-sanduiche.active span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+.container-links {
+  transition: max-height 0.3s ease;
+  max-height: none;
+  overflow: visible;
+}
+
+/* Definições das animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.container-links.active {
+  max-height: 300px; /* Ajuste conforme o conteúdo do menu */
+  display: flex;
+  flex-direction: column;
+}
+
+.container-links.active a {
+  animation: fadeIn 0.5s forwards;
+}
+
+/* Estilização do Conteúdo Principal */
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  padding: 0 20px;
+  background-image: url('../assets/img-fundo.jpg');
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-titulo-site {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 20px;
+  font-size: 28px;
+  color: #fff;
+  background-color: #0a9077b3;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.secao-container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.container-descricao {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.container-descricao h2 {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.container-quartos {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.quarto {
+  flex: 1 0 250px;
+  text-decoration: none;
+  color: #3d3d3d;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #00836a;
+}
+
+.quarto img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.quarto a {
+  text-decoration: none;
+  color: #333;
+}
+
+.secao-container h2 {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+#rota {
+  padding: 0px;
+}
+
+/* Estilização seção Sobre */
+.container-cards {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.card {
+  flex: 1 0 350px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  text-align: left;
+  background-color: #f1f1f1;
+}
+
+.container-card-descricao {
+  width: 100%;
+  height: 100%;
+  padding: 0px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.container-card-img {
+  width: 30%;
+  height: 100%;
+}
+
+.container-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Estilização do rodapé */
+.rodape {
+  background-color: #49997d;
+  color: #fff;
+}
+
+.container-info {
+  padding: 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.card-info-rodape {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-info-rodape h4 {
+  font-size: 22px;
+}
+
+.card-info-rodape a {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.card-info-rodape p {
+  margin-left: 10px;
+}
+
+.card-info-rodape img {
+  width: 40px;
+  height: 40px;
+}
+
+.container-copright {
+  padding: 20px;
+  font-weight: 600;
+  text-align: center;
+  border-top: 1px solid #3b7863;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .menu-sanduiche {
+    display: flex; /* Exibe o menu sanduíche */
+  }
+
+  .container-links {
+    display: none; /* Esconde o menu de navegação completo */
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .container-links.active {
+    display: flex; /* Exibe o menu de navegação ao clicar no menu sanduíche */
+  }
+
+  .container-topo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container-link-logotipo {
+    flex: 1 0 100%;
+    text-align: center;
+  }
+
+  .container-links a {
+    padding: 10px 0;
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .banner {
+    height: 50vh;
+    background-position: top;
+  }
+
+  .container-titulo-site {
+    font-size: 22px;
+    padding: 20px;
+  }
+
+  .secao-container {
+    padding: 60px 20px;
+  }
+
+  .container-quartos {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .quarto {
+    flex: 1 0 100%;
+    text-align: center;
+  }
+
+  .container-cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card {
+    flex: 1 0 100%;
+    height: auto;
+  }
+
+  .container-info {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card-info-rodape {
+    flex: 1 0 100%;
+    text-align: center;
+  }
+}
+
+/* Responsividade para tablets */
+@media (max-width: 1024px) {
+  .container-quartos {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .container-cards {
+    flex-direction: column;
+  }
+
+  .card {
+    flex: 1 0 100%;
+    height: auto;
+  }
+
+  .rodape {
+    text-align: center;
+  }
+
+  .container-info {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
